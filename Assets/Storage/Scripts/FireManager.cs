@@ -3,8 +3,6 @@ using System.Collections;
 
 public class FireManager : MonoBehaviour
 {
-
-    // Variebles to manager the fired.
     public Transform actualPos;
     private Transform destiny;
     public float distance;
@@ -24,10 +22,6 @@ public class FireManager : MonoBehaviour
 
     void rotate()
     {
-        //olhar para o player
-        //usando "PlayerVect2" podemos iguala-lo ao vector3 player
-        //assim podemos usar o player(vector3), como um vector2 dando fim aos bugs que ocorreriam por ser um sprite
-        //o resto é matemática
         destinyVect2 = new Vector2(destinePos.x, destinePos.y);
         _direction = (destinyVect2 - (Vector2)transform.position).normalized;
         angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg + (int)0;
@@ -36,10 +30,10 @@ public class FireManager : MonoBehaviour
 
     void Fired()
     {
-         isFired = true; 
+        isFired = true; 
 
         if (isFired)
-        { ShotTheFire(true); count++; }
+        { ShotTheFire(true); }
 
     }
 
